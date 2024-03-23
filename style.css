@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+  background: #FCFAFA;
+  margin: 25px;
+  color: #292F36;
+}
+
+#generateMemeButton {
+  transition: all .5s ease;
+  color: #292F36;;
+  border: 3px solid #292F36;;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 17px;
+  background-color : transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+}
+#generateMemeButton:hover {
+  color: #FCFAFA;
+  background-color: #292F36;
+  cursor: pointer;
+
+}
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+==========
+Page Title
+==========
+*/
+
+.logo{
+  font-weight: 900;
+  font-size: 32px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+
+.page-description{
+  width: 70%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+
+}
+
+/*
+==========
+  Form
+==========
+*/
+
+.items-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.form-container-items{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.form-label,
+.form-input{
+  display: flex;
+  margin: 10px;
+  font-size: 18px;
+}
+
+#imageURL,
+#memeTitle,
+#memeDescription{
+  width: 300px;
+}
+
+#generateMemeButton{
+  margin: 10px;
+}
+
+/*
+==========
+  Meme
+==========
+*/
+
+.memes-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  border-color:green;
+  border-style: solid;
+}

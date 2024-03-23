@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Meme Generator</title>
+</head>
+
+<body>
+  <div class="page-container">
+
+    <div class="logo">Meme Generator</div>
+
+    <div class="page-description">Input an image URL, title, and description to generate a meme!</div>
+
+    <div class="items-container">
+
+      <!--Submit Form-->
+      <div class="form-container"> <!--this is a column-->
+        <div class="form-container-items">
+          <div>
+            <div class="form-label">
+              <label for="imageURL">Image URL</label>
+            </div>
+            <div class="form-input">
+              <input type="url" name="imageURL" id="imageURL" />
+            </div>
+            <p class="error-message" id="errorMessage"></p>
+          </div>
+        </div>
+
+        <div class="form-container-items">
+          <div>
+            <div class="form-label">
+              <label for="memeTitle">Title</label>
+            </div>
+            <div class="form-input">
+              <input type="text" name="memeTitle" id="memeTitle" />
+            </div>
+            <p class="error-message" id="errorMessage"></p>
+          </div>
+        </div>
+
+        <div class="form-container-items">
+          <div>
+            <div class="form-label">
+              <label for="memeDescription">Description</label>
+            </div>
+            <div class="form-input">
+              <input type="text" name="memeDescription" id="memeDescription" />
+            </div>
+            <p class="error-message" id="errorMessage"></p>
+          </div>
+        </div>
+
+        <div class="form-container-items">
+          <input type="submit" id="generateMemeButton" value="Generate Meme">
+        </div>
+
+      </div>
+    </div>
+
+    <!--List of Memes-->
+    <div class="memes-container">
+    </div>
+
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
