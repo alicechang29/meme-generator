@@ -112,6 +112,61 @@ Page Title
   flex-wrap: wrap;
   justify-content: center;
   margin: 10px;
-  border-color:green;
-  border-style: solid;
 }
+
+.meme-item {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.meme-title-overlay-text,
+.meme-descrip-overlay-text {
+position: absolute;
+text-align: center;
+left: 0;
+width: 100%;
+}
+
+.meme-title-overlay-text {
+top: 10%;
+
+}
+
+.title-text,
+.descrip-text{
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: -2px -2px 0 #292f36, 2px -2px 0 #292f36, -2px 2px 0 #292f36,
+    2px 2px 0 #292f36;
+}
+
+.title-text{
+font-size: 32px;
+}
+
+.descrip-text{
+  font-size: 20px;
+}
+
+.meme-descrip-overlay-text {
+bottom: 10%;
+}
+
+/* Image */
+
+img {
+  width: 600px;
+  height: 400px;
+}
+
+@media only screen and (max-width: 768px) {
+  img {
+    width: 300px;
+    height: 200px;
+  }
+}
+

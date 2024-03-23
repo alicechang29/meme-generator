@@ -16,6 +16,7 @@ meme-item
 listen for delete button
 - have a function that deletes the div
 
+test image: https://tinyurl.com/y39p455z
 */
 
 /*
@@ -40,35 +41,44 @@ let memeTitle;
 let memeDescription;
 
 function generateMeme(img, title, descrip) {
-  let memeItem = document.createElement("div");
+  let memeItem = document.createElement("div"); //overall container for the a single meme, contains the image
+  memeItem.classList.add("meme-item");
 
-  img.appendChild(memeItem);
-
+  //the image
   let image = new Image();
-  image.width = 300;
-  image.height = 200;
-  image.src = img.src;
+  image.src = img;
 
-  console.log(image.src);
-
-  memeItem.appendChild(image); //appending image child to memeItem parent
+  memeItem.appendChild(image);
 
 
-  // Create text nodes for title and description
-  let titleTextNode = document.createTextNode(title);
-  let descripTextNode = document.createTextNode(descrip);
+  //creating div for the text elements
+  let memeTitleContainer = document.createElement("div");
+  memeTitleContainer.classList.add("meme-title-overlay-text");
 
-  // Create paragraph elements for title and description
-  let titlePara = document.createElement("p");
-  titlePara.appendChild(titleTextNode);
-  memeItem.appendChild(titlePara);
+  //meme title
+  let titleText = document.createElement("p");
+  titleText.textContent = title;
+  titleText.classList.add("title-text");
 
-  let descripPara = document.createElement("p");
-  descripPara.appendChild(descripTextNode);
-  memeItem.appendChild(descripPara);
+  memeTitleContainer.appendChild(titleText);
 
 
-  memesContainer.appendChild(memeItem); //appending memeItem child to memesContainer parent
+  //meme description
+
+  let memeDescripContainer = document.createElement("div");
+  memeDescripContainer.classList.add("meme-descrip-overlay-text");
+
+  let descripText = document.createElement("p");
+  descripText.textContent = descrip;
+  descripText.classList.add("descrip-text");
+
+  memeDescripContainer.appendChild(descripText);
+
+
+  //appending memeItem child to memesContainer parent
+  memeItem.appendChild(memeTitleContainer);
+  memeItem.appendChild(memeDescripContainer);
+  memesContainer.appendChild(memeItem);
 
 }
 
@@ -86,12 +96,11 @@ generateMemeButton.addEventListener("click", function (event) {
 
   //https://www.geeksforgeeks.org/html-dom-input-url-object/
 
-  imageURL = url.value;
-  console.log("image URL", imageURL);
+  //this is wrong. call by id?
+  imageURL = document.getElementById("imageURL").value;
 
-
-  memeTitle = document.querySelector("#memeTitle");
-  memeDescription = document.querySelector("#memeDescription");
+  memeTitle = document.getElementById("memeTitle").value;
+  memeDescription = document.getElementById("memeDescription").value;
 
   generateMeme(imageURL, memeTitle, memeDescription);
 })
