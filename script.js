@@ -72,9 +72,12 @@ function generateMeme(img, title, descrip) {
   deleteButton.classList.add("delete-button");
 
   //delete button event listener
-  deleteButton.addEventListener("click", function () {
+
+  function deleteMeme() {
     memesContainer.removeChild(memeItem);
-  });
+  }
+
+  deleteButton.addEventListener("click", deleteMeme);
 
 
   //appending memeItem child to memesContainer parent
@@ -82,6 +85,8 @@ function generateMeme(img, title, descrip) {
   memeItem.appendChild(memeTitleContainer);
   memeItem.appendChild(memeDescripContainer);
   memesContainer.appendChild(memeItem);
+
+  resetValues();
 }
 
 
@@ -94,10 +99,16 @@ function assignValues() {
   generateMeme(imageURL, memeTitle, memeDescription);
 }
 
+function resetValues() {
+  document.getElementById("imageURL").value = "";
+  document.getElementById("memeTitle").value = "";
+  document.getElementById("memeDescription").value = "";
+}
 
 /*
 ================
 Event Listeners
+(non-anonymous, which allows for removing event listners if needed)
 ================
 */
 
