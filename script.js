@@ -106,3 +106,9 @@ generateMemeButton.addEventListener("click", function (event) {
   assignValues();
 });
 
+generateMemeButton.addEventListener("keydown", function (event) {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    assignValues();
+  }
+});
