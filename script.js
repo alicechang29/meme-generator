@@ -1,20 +1,11 @@
 /*
-- Need to listen for submit events
-- Once submit happens:
--- if image URL is populated, pull the image
--- else, use default image
--- append the title and description onto the image
+- add a delete button
 
-structure of meme:
-within the memes-container (rows, wrap )
-meme-item
-- image
--- title
--- description
-- delete button
-
-listen for delete button
+- listen for delete button
 - have a function that deletes the div
+
+Clicks:
+- listen for the enter button on keyboard for submit
 
 test image: https://tinyurl.com/y39p455z
 */
@@ -75,12 +66,32 @@ function generateMeme(img, title, descrip) {
   memeDescripContainer.appendChild(descripText);
 
 
+  /*add delete meme button
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+
+  deleteButton.addEventListener("click", function () {
+    memesContainer.removeChild(memeItem);
+  });
+
+  */
+
   //appending memeItem child to memesContainer parent
   memeItem.appendChild(memeTitleContainer);
   memeItem.appendChild(memeDescripContainer);
   memesContainer.appendChild(memeItem);
-
 }
+
+
+function assignValues() {
+  imageURL = document.getElementById("imageURL").value;
+
+  memeTitle = document.getElementById("memeTitle").value;
+  memeDescription = document.getElementById("memeDescription").value;
+
+  generateMeme(imageURL, memeTitle, memeDescription);
+}
+
 
 /*
 ================
@@ -90,20 +101,6 @@ Event Listeners
 
 generateMemeButton.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log("generating meme");
-
-  //update the variables for the meme
-
-  //https://www.geeksforgeeks.org/html-dom-input-url-object/
-
-  //this is wrong. call by id?
-  imageURL = document.getElementById("imageURL").value;
-
-  memeTitle = document.getElementById("memeTitle").value;
-  memeDescription = document.getElementById("memeDescription").value;
-
-  generateMeme(imageURL, memeTitle, memeDescription);
-})
-
-
+  assignValues();
+});
 
