@@ -101,14 +101,18 @@ Event Listeners
 ================
 */
 
-generateMemeButton.addEventListener("click", function (event) {
+function handleClick() {
   event.preventDefault();
   assignValues();
-});
+}
 
-generateMemeButton.addEventListener("keydown", function (event) {
+function handleKeyDown(event) {
   event.preventDefault();
   if (event.key === "Enter") {
     assignValues();
   }
-});
+}
+
+generateMemeButton.addEventListener("click", handleClick);
+
+generateMemeButton.addEventListener("keydown", handleKeyDown);
