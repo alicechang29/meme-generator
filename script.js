@@ -66,17 +66,19 @@ function generateMeme(img, title, descrip) {
   memeDescripContainer.appendChild(descripText);
 
 
-  /*add delete meme button
+  //add delete meme button
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "Delete";
+  deleteButton.textContent = "delete";
+  deleteButton.classList.add("delete-button");
 
+  //delete button event listener
   deleteButton.addEventListener("click", function () {
     memesContainer.removeChild(memeItem);
   });
 
-  */
 
   //appending memeItem child to memesContainer parent
+  memeItem.appendChild(deleteButton);
   memeItem.appendChild(memeTitleContainer);
   memeItem.appendChild(memeDescripContainer);
   memesContainer.appendChild(memeItem);

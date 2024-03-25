@@ -116,9 +116,10 @@ Page Title
 
 .meme-item {
   position: relative;
-  display: inline-block;
+  display: flex;
   margin: 5px;
 }
+
 
 .meme-title-overlay-text,
 .meme-descrip-overlay-text {
@@ -130,7 +131,10 @@ width: 100%;
 
 .meme-title-overlay-text {
 top: 10%;
+}
 
+.meme-descrip-overlay-text {
+  bottom: 10%;
 }
 
 .title-text,
@@ -152,8 +156,17 @@ font-size: 32px;
   font-size: 20px;
 }
 
-.meme-descrip-overlay-text {
-bottom: 10%;
+.delete-button{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background-color: #292f36;
+  color: white;
+
+}
+
+.delete-button:hover{
+  background-color: #525e6b;
 }
 
 /* Image */
