@@ -160,14 +160,13 @@ font-size: 32px;
   position: absolute;
   bottom: 5%;
   right: 5%;
-  background-color: #292f36;
-  color: white;
+  color: rgb(105, 105, 105);
+  cursor: pointer;
+  font-size: 1.25rem;
 
 }
 
-.delete-button:hover{
-  background-color: #525e6b;
-}
+
 
 /* Image */
 

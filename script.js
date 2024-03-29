@@ -1,16 +1,4 @@
 /*
-- add a delete button
-
-- listen for delete button
-- have a function that deletes the div
-
-Clicks:
-- listen for the enter button on keyboard for submit
-
-test image: https://tinyurl.com/y39p455z
-*/
-
-/*
 ==========
 DOM Setup
 ==========
@@ -68,7 +56,7 @@ function generateMeme(img, title, descrip) {
 
   //add delete meme button
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "delete";
+  deleteButton.innerHTML = "&times;";
   deleteButton.classList.add("delete-button");
 
   //delete button event listener
@@ -94,6 +82,7 @@ function assignValues() {
   imageURL = document.getElementById("imageURL").value;
 
   memeTitle = document.getElementById("memeTitle").value;
+
   memeDescription = document.getElementById("memeDescription").value;
 
   generateMeme(imageURL, memeTitle, memeDescription);
@@ -108,7 +97,7 @@ function resetValues() {
 /*
 ================
 Event Listeners
-(non-anonymous, which allows for removing event listners if needed)
+(non-anonymous, which allows for removing event listeners if needed)
 ================
 */
 
